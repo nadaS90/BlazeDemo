@@ -25,12 +25,10 @@ public class P3_LoginPage extends BasePage
     {
         SendTxt(userNameTextBox, userName);
     }
-
     public void UserEnterPassword(String password)
     {
         SendTxt(passwordTxtBox, password);
     }
-
     public void UserClickSignInBtn()
     {
         ClickBtn(loginBtn);

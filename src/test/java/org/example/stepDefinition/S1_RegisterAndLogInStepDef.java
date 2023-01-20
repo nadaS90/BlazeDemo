@@ -77,8 +77,9 @@ public class S1_RegisterAndLogInStepDef {
     @When("user go to login page")
     public void userGoToLoginPage() throws InterruptedException {
         Thread.sleep(6000);
-        _homePage.UserClickLogOutBtn();
-        _homePage.UserClickLogInBtn();
+//        _homePage.UserClickLogOutBtn();
+//        _homePage.UserClickLogInBtn();
+        _homePage.UserClickCartBtn();
     }
 
     @And("user enter invalid email and password")

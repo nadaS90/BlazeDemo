@@ -15,15 +15,15 @@ public class P1_HomePage extends BasePage
 
     public static final String signUpBtnHomeID ="signin2";
     public static final String logInBtnHomeID ="login2";
-    public static final String logOutBtnHomeID = "//*[contains(text(),'Log out') ]";
-    public static final String cartBtnID ="cartur";
+    public static final String logOutBtnHomeID = "//a[.='Log out']";
+    public static final String cartBtnHomeID ="\"//a[.='Cart']\"";
 
     public static final String welcomeTxtHomeID ="nameofuser";
 
 
     public WebElement signUpBtnHome = Hooks.driver.findElement(By.id(signUpBtnHomeID));
     public WebElement loginBtnHome = Hooks.driver.findElement(By.id(logInBtnHomeID));
-    public WebElement cartBtn = Hooks.driver.findElement(By.id(cartBtnID));
+    public WebElement cartBtnHome = Hooks.driver.findElement(By.id(cartBtnHomeID));
     public WebElement logOutBtnHome = Hooks.driver.findElement(By.xpath(logOutBtnHomeID));
     public WebElement welcomeTxtHome = Hooks.driver.findElement(By.id(welcomeTxtHomeID));
 
@@ -35,13 +35,13 @@ public class P1_HomePage extends BasePage
     {
         ClickBtn(loginBtnHome);
     }
-    public void UserClickCartBtn()
-    {
-        ClickBtn(cartBtn);
-    }
     public void UserClickLogOutBtn()
     {
         ClickBtn(logOutBtnHome);
+    }
+    public void UserClickCartBtn()
+    {
+        ClickBtn(cartBtnHome);
     }
 
 
