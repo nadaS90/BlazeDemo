@@ -11,20 +11,37 @@ public class P7_CheckOutPage extends BasePage
     {
         super(driver);
     }
-//    public static final String userNameTxtBoxID ="loginusername";
-//
-//    public WebElement userNameTextBox = Hooks.driver.findElement(By.id(userNameTxtBoxID));
-//
-//    public void UserEnterUserName(String userName)
-//    {
-//        SendTxt(userNameTextBox, userName);
-//    }
-//    public void UserEnterPassword(String password)
-//    {
-//        SendTxt(passwordTxtBox, password);
-//    }
-//    public void UserClickSignInBtn()
-//    {
-//        ClickBtn(loginBtn);
-//    }
+
+    public static final String nameTxtBoxID ="name";
+    public static final String countryTxtBoxID = "country";
+    public static final String cityTxtBoxID = "city";
+    public static final String cardTxtBoxID = "card";
+    public static final String monthTxtBoxID = "month";
+    public static final String yearTxtBoxID = "year";
+    public static final String purchaseBtnID = "//button[.='Purchase']";
+//    public static final String confirmMsgID = "//h2[.='Thank you for your purchase!']";
+
+
+
+    public WebElement nameTextBox = Hooks.driver.findElement(By.id(nameTxtBoxID));
+    public WebElement countryTextBox = Hooks.driver.findElement(By.id(countryTxtBoxID));
+    public WebElement cityTextBox = Hooks.driver.findElement(By.id(cityTxtBoxID));
+    public WebElement cardTextBox = Hooks.driver.findElement(By.id(cardTxtBoxID));
+    public WebElement monthTextBox = Hooks.driver.findElement(By.id(monthTxtBoxID));
+    public WebElement yearTextBox = Hooks.driver.findElement(By.id(yearTxtBoxID));
+    public WebElement purchaseBtn = Hooks.driver.findElement(By.xpath(purchaseBtnID));
+
+    public void UserFillMandatoryFields(String name , String country, String city, String card, String month, String  year)
+    {
+        SendTxt(nameTextBox, name);
+        SendTxt(countryTextBox, country);
+        SendTxt(cityTextBox, city);
+        SendTxt(cardTextBox, card);
+        SendTxt(monthTextBox, month);
+        SendTxt(yearTextBox, year);
+    }
+    public void UserClickpurchaseBtn()
+    {
+        ClickBtn(purchaseBtn);
+    }
 }

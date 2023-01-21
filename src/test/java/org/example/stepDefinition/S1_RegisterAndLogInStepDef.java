@@ -12,8 +12,6 @@ import org.junit.Assert;
 import org.openqa.selenium.Alert;
 
 public class S1_RegisterAndLogInStepDef {
-
-    String logOutHomeBtn;
     P1_HomePage _homePage;
     P2_RegistrationPage _registerPage;
     P3_LoginPage _loginPage;
@@ -35,7 +33,7 @@ public class S1_RegisterAndLogInStepDef {
     @And("user enters valid username")
     public void userEntersValidUsername()
     {
-        _registerPage.UserAddUserName(Constants.email);
+        _registerPage.UserAddUserName(Constants.Email);
     }
 
     @And("user fills valid password")
@@ -52,7 +50,7 @@ public class S1_RegisterAndLogInStepDef {
 
     @Then("user could register successfully and success msg appears")
     public void userCouldRegisterSuccessfullyAndSuccessMsgAppears() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         Alert al = Hooks.driver.switchTo().alert();
         al.accept();
     }
@@ -65,7 +63,7 @@ public class S1_RegisterAndLogInStepDef {
 
     @And("user enter valid email and password")
     public void userEnterValidEmailAndPassword(){
-        _loginPage.UserEnterUserName(Constants.email);
+        _loginPage.UserEnterUserName(Constants.Email);
         _loginPage.UserEnterPassword(Constants.Password);
         _loginPage.UserClickSignInBtn();
     }

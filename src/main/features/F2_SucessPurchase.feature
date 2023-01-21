@@ -13,7 +13,7 @@ Feature: users can add items to the cart and remove un-wanted item
 
 
   Scenario: User place a successful purchase
-    When  User add item One to the cart
+    When  User add items to the cart
     Then  User delete item from cart
     When  User place an order
     And   User fill mandatory fields
