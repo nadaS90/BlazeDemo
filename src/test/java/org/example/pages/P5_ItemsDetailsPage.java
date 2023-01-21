@@ -29,7 +29,7 @@ public class P5_ItemsDetailsPage extends BasePage
     public void UserClickAddToCartBtn() throws InterruptedException {
        ClickBtn(addToCartBtn);
        //Hooks.driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         Alert al = Hooks.driver.switchTo().alert();
         al.accept();
 

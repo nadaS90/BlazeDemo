@@ -63,40 +63,34 @@ public class S2_SucessPurchase {
 
     @Then("User find listed monitors")
     public void userFindListedMonitors() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         int itemsNo = _categoryPage.ListedItemCount();
         System.out.println("There are Items in the category");
         Assert.assertEquals("Items Found", true, itemsNo > 0);
     }
 
     @When("User add item One to the cart")
-    public void userAddItemOneToTheCart() throws InterruptedException
-    {
+    public void userAddItemOneToTheCart() throws InterruptedException {
         _categoryPage.UserNavigateToItemOne();
+
         _itemPage.SetAddToCartBtn();
-        _itemPage.UserClickAddToCartBtn();
+        for (int i = 0; i < 2; i++) {
+            _itemPage.UserClickAddToCartBtn();
+        }
+
         _homePage.SetCartBtn();
         _homePage.UserClickCartBtn();
-
     }
-
-
 
     @Then("User delete item from cart")
-    public void userDeleteItemFromCart()
-    {
+    public void userDeleteItemFromCart() throws InterruptedException {
         _cartPage.SetDeleteBtn();
         _cartPage.UserClickDeleteBtn();
-//         String actualString = _cartPage.itemInCart.getText();
-//         String expectedString = "Nexus 6";
-//         Assert.assertTrue(actualString.contains(expectedString));
     }
-
 
     @When("User place an order")
     public void userPlaceAnOrder() throws InterruptedException {
-        Hooks.driver.navigate().to("https://www.demoblaze.com/cart.html");
-        Hooks.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
         _cartPage.SetPlaceOrderBtn();
         _cartPage.UserClickPlaceOrderBtn();
         Thread.sleep(5000);

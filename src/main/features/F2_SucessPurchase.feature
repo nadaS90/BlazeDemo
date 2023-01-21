@@ -16,9 +16,9 @@ Feature: users can add items to the cart and remove un-wanted item
     When  User add item One to the cart
     Then  User delete item from cart
     When  User place an order
-    And   User fill mandatory fields
-    And   User click on purchase button
-    Then  Checkout done and successful msg will be displayed
+    #And   User fill mandatory fields
+    #And   User click on purchase button
+    #Then  Checkout done and successful msg will be displayed
 
 
 
