@@ -1,6 +1,5 @@
 package org.example.pages;
 
-import io.cucumber.messages.types.Hook;
 import org.example.stepDefinition.Hooks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +14,6 @@ public class P1_HomePage extends BasePage
 
     public static final String signUpBtnHomeID ="signin2";
     public static final String logInBtnHomeID ="login2";
-    public static final String logOutBtnHomeID = "//a[.='Log out']";
     public static final String cartBtnHomeID ="//a[.='Cart']";
     public static final String homeBtnID ="//a[contains(.,'Home')]";
 

@@ -38,7 +38,7 @@ public class S2_SucessPurchase {
 
     @Then("User find listed phones")
     public void userFindListedPhones() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         int itemsNo = _categoryPage.ListedItemCount();
         System.out.println("There are Items in the category");
         Assert.assertEquals("Items Found", true, itemsNo > 0);
@@ -51,7 +51,7 @@ public class S2_SucessPurchase {
 
     @Then("User find listed laptops")
     public void userFindListedLaptops() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         int itemsNo = _categoryPage.ListedItemCount();
         System.out.println("There are Items in the category");
         Assert.assertEquals("Items Found", true, itemsNo > 0);
@@ -73,17 +73,10 @@ public class S2_SucessPurchase {
     @When("User add items to the cart")
     public void userAddItemsToTheCart() throws InterruptedException {
         _categoryPage.UserNavigateToItemOne();
-
-
         _itemPage.SetAddToCartBtn();
         for (int i = 0; i < 2; i++) {
             _itemPage.UserClickAddToCartBtn();
         }
-
-        for (int i = 0; i < 2; i++) {
-            _itemPage.UserClickAddToCartBtn();
-        }
-
         _homePage.SetCartBtn();
         _homePage.UserClickCartBtn();
     }
@@ -92,8 +85,7 @@ public class S2_SucessPurchase {
     public void userDeleteItemFromCart() throws InterruptedException {
         _cartPage.SetDeleteBtn();
         _cartPage.UserClickDeleteBtn();
-        Thread.sleep(5000);
-
+        Thread.sleep(2000);
     }
 
     @When("User place an order")
@@ -101,14 +93,15 @@ public class S2_SucessPurchase {
     {
         _cartPage.SetPlaceOrderBtn();
         _cartPage.UserClickPlaceOrderBtn();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
     }
 
     @And("User fill mandatory fields")
     public void userFillMandatoryFields() throws InterruptedException {
         this._checkOutPage = new P7_CheckOutPage(driver);
+        Hooks.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         _checkOutPage.UserFillMandatoryFields(Constants.Name, Constants.Country, Constants.City,Constants.Card, Constants.Month, Constants.Year);
-        Thread.sleep(5000);
+        Thread.sleep(2000);
 
     }
 
@@ -125,7 +118,6 @@ public class S2_SucessPurchase {
         String expectedResult = "Thank you";
         Assert.assertTrue(actualResult.contains(expectedResult));
     }
-
 
 }
 

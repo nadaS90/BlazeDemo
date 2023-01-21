@@ -1,8 +1,8 @@
 
+@test
 Feature: users can add items to the cart and remove un-wanted item
          then complete placing successful order.
 
-  @category
   Scenario: User check all listed categories have items
     When User Check phones category
     Then User find listed phones

@@ -19,7 +19,6 @@ public class P7_CheckOutPage extends BasePage
     public static final String monthTxtBoxID = "month";
     public static final String yearTxtBoxID = "year";
     public static final String purchaseBtnID = "//button[.='Purchase']";
-//    public static final String confirmMsgID = "//h2[.='Thank you for your purchase!']";
 
 
 

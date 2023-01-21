@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src\\main\\features",
         glue = "org.example.stepDefinition",
-        tags = "@category",
+        tags = "@test",
         plugin = {
                 "pretty",
                 "html:target/cucumber.html",
