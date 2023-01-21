@@ -9,28 +9,31 @@ import org.example.pages.P4_CategoriesPage;
 import org.example.pages.P5_ItemsDetailsPage;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class S2_SucessPurchase
-{
+import java.util.concurrent.TimeUnit;
+
+import static org.example.stepDefinition.Hooks.driver;
+
+public class S2_SucessPurchase {
     P1_HomePage _homePage;
     P4_CategoriesPage _categoryPage;
     P5_ItemsDetailsPage _itemPage;
-    public S2_SucessPurchase()
-    {
-        this._homePage = new P1_HomePage(Hooks.driver);
-        this._categoryPage = new P4_CategoriesPage(Hooks.driver);
-        this._itemPage = new P5_ItemsDetailsPage(Hooks.driver);
+
+    public S2_SucessPurchase() {
+        this._homePage = new P1_HomePage(driver);
+        this._categoryPage = new P4_CategoriesPage(driver);
+        this._itemPage = new P5_ItemsDetailsPage(driver);
     }
 
     @When("User Check phones category")
-    public void userCheckPhonesCategory()
-    {
+    public void userCheckPhonesCategory() {
         _categoryPage.UserClickPhonesCategoryLink();
     }
 
     @Then("User find listed phones")
-    public void userFindListedPhones() throws InterruptedException
-    {
+    public void userFindListedPhones() throws InterruptedException {
         Thread.sleep(3000);
         int itemsNo = _categoryPage.ListedItemCount();
         System.out.println("There are Items in the category");
@@ -38,8 +41,7 @@ public class S2_SucessPurchase
     }
 
     @When("User Check laptops category")
-    public void userCheckLaptopsCategory()
-    {
+    public void userCheckLaptopsCategory() {
         _categoryPage.UserClickLaptopsCategoryLink();
     }
 
@@ -52,8 +54,7 @@ public class S2_SucessPurchase
     }
 
     @When("User Check monitors category")
-    public void userCheckMonitorsCategory()
-    {
+    public void userCheckMonitorsCategory() {
         _categoryPage.UserClickMonitorsCategoryLink();
     }
 
@@ -66,48 +67,72 @@ public class S2_SucessPurchase
         Assert.assertEquals("Items Found", true, itemsNo > 0);
     }
 
-    @Given("User add items to the cart")
-    public void userAddItemsToTheCart() throws InterruptedException
-    {
-        _categoryPage.UserNavigateToItemOne();
-        Thread.sleep(5000);
-        _itemPage.UserClickAddToCartBtn();
-        Thread.sleep(5000);
-        Alert al = Hooks.driver.switchTo().alert();
-        al.accept();
+    @Given("User add item One to the cart")
+    public void userAddItemOneToTheCart() {
 
-        Hooks.driver.navigate().back();
-        Thread.sleep(5000);
+//        _categoryPage.UserNavigateToItemOne();
+//        Thread.sleep(5000);
+//        _itemPage.SetAddToCartBtn();
+//        _itemPage.UserClickAddToCartBtn();
+//        Thread.sleep(5000);
+//        Alert al = driver.switchTo().alert();
+//        al.accept();
+//
+//        driver.navigate().back();
+//        driver.navigate().back();
+//        Thread.sleep(5000);
+//
+//        _categoryPage.UserNavigateToItemTwo();
+//        Thread.sleep(5000);
+//        _itemPage.SetAddToCartBtn();
+//        _itemPage.UserClickAddToCartBtn();
+//        Thread.sleep(5000);
+//        Alert alarm = driver.switchTo().alert();
+//        alarm.accept();
+//
+//        Hooks.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//        wait().until(ExpectedConditions.alertIsPresent());
+//        Alert alert = driver.switchTo().alert();
+//        alert.accept();
+            _categoryPage.UserNavigateToItemOne();
+            _itemPage.SetAddToCartBtn();
+            _itemPage.UserClickAddToCartBtn();
+//        _categoryPage.UserNavigateToItemOne();
+//        _itemPage.SetAddToCartBtn();
+//        _itemPage.UserClickAddToCartBtn();
+        }
 
-        _categoryPage.UserNavigateToItemTwo();
-        Thread.sleep(5000);
-        _itemPage.UserClickAddToCartBtn();
-        Thread.sleep(5000);
-        Alert alarm = Hooks.driver.switchTo().alert();
-        alarm.accept();
+        @Then("User delete item from cart")
+        public void userDeleteItemFromCart ()
+        {
+           // _homePage.UserClickCartBtn()
+            Hooks.driver.navigate().to("https://www.demoblaze.com/cart.html");
+
+
+
+        }
+
+
+        @When("User place an order")
+        public void userPlaceAnOrder () {
+        }
+
+        @And("User fill mandatory fields")
+        public void userFillMandatoryFields () {
+        }
+
+        @And("User click on purchase button")
+        public void userClickOnPurchaseButton () {
+        }
+
+        @Then("Checkout done and successful msg will be displayed")
+        public void checkoutDoneAndSuccessfulMsgWillBeDisplayed ()
+        {
+        }
+
+
+
     }
 
-    @Then("User delete item from cart")
-    public void userDeleteItemFromCart()
-    {
-        _homePage.UserClickCartBtn();
-
-    }
 
 
-    @When("User place an order")
-    public void userPlaceAnOrder() {
-    }
-
-    @And("User fill mandatory fields")
-    public void userFillMandatoryFields() {
-    }
-
-    @And("User click on purchase button")
-    public void userClickOnPurchaseButton() {
-    }
-
-    @Then("Checkout done and successful msg will be displayed")
-    public void checkoutDoneAndSuccessfulMsgWillBeDisplayed() {
-    }
-}

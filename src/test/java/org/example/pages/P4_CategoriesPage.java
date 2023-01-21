@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
 public class P4_CategoriesPage extends BasePage
@@ -16,7 +17,7 @@ public class P4_CategoriesPage extends BasePage
 
     public static final String phonesCategoryLinkID ="Phones";
     public static final String phoneProductOneID = "Nexus 6";
-    public static final String phoneProductTwoID = "Samsung galaxy s7";
+    public static final String phoneProductTwoID = "Nokia lumia 1520";
     public static final String laptopsCategoryLinkID ="Laptops";
     public static final String monitorsCategoryLinkID ="Monitors";
 
@@ -35,11 +36,13 @@ public class P4_CategoriesPage extends BasePage
     public void UserNavigateToItemOne()
     {
         ClickBtn(phoneProductOne);
+        Hooks.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     public void UserNavigateToItemTwo()
     {
         ClickBtn(phoneProductTwo);
+        Hooks.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     public void UserClickLaptopsCategoryLink()

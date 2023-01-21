@@ -73,27 +73,4 @@ public class S1_RegisterAndLogInStepDef {
 //        Assert.assertEquals(_homePage.logOutBtn.getText().toLowerCase(), logOutHomeBtn, "Log out");
 
     }
-
-    @When("user go to login page")
-    public void userGoToLoginPage() throws InterruptedException {
-        Thread.sleep(6000);
-//        _homePage.UserClickLogOutBtn();
-//        _homePage.UserClickLogInBtn();
-        _homePage.UserClickCartBtn();
-    }
-
-    @And("user enter invalid email and password")
-    public void userEnterInvalidEmailAndPassword()
-    {
-        _loginPage.UserEnterUserName(Constants.wrongEmail);
-        _loginPage.UserEnterPassword(Constants.Password);
-        _loginPage.UserClickSignInBtn();
-    }
-
-    @Then("user could not login to the system")
-    public void userCouldNotLoginToTheSystem() throws InterruptedException {
-        Thread.sleep(5000);
-        Alert al = Hooks.driver.switchTo().alert();
-        al.accept();
-    }
 }

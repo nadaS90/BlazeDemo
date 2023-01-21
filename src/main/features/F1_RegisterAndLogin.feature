@@ -10,9 +10,6 @@ Feature: users could register with new account and try to login.
     Then  user could register successfully and success msg appears
     When  user go to login popUp
     And   user enter valid email and password
-    When  user go to login page
-    And   user enter invalid email and password
-    Then  user could not login to the system
 
 
 

@@ -16,18 +16,18 @@ public class P1_HomePage extends BasePage
     public static final String signUpBtnHomeID ="signin2";
     public static final String logInBtnHomeID ="login2";
     public static final String logOutBtnHomeID = "//a[.='Log out']";
-    public static final String cartBtnHomeID ="//a[.='Cart']";
+   // public static final String cartBtnHomeID ="\"//a[.='Cart']\"";
     public static final String welcomeTxtHomeID ="nameofuser";
-    public static final String homeBtnID ="//div[@id='navbarExample']/ul//a[@href='index.html']";
+    public static final String homeBtnID ="//a[contains(.,'Home')]";
 
 
 
     public WebElement signUpBtnHome = Hooks.driver.findElement(By.id(signUpBtnHomeID));
     public WebElement loginBtnHome = Hooks.driver.findElement(By.id(logInBtnHomeID));
-    public WebElement cartBtnHome = Hooks.driver.findElement(By.id(cartBtnHomeID));
+  //  public WebElement cartBtnHome = Hooks.driver.findElement(By.id(cartBtnHomeID));
     public WebElement homeBtn = Hooks.driver.findElement(By.xpath(homeBtnID));
     public WebElement logOutBtnHome = Hooks.driver.findElement(By.xpath(logOutBtnHomeID));
-    public WebElement welcomeTxtHome = Hooks.driver.findElement(By.id(welcomeTxtHomeID));
+    //public WebElement welcomeTxtHome = Hooks.driver.findElement(By.id(welcomeTxtHomeID));
 
     public void UserClickSignUpBtn()
     {
@@ -41,10 +41,10 @@ public class P1_HomePage extends BasePage
     {
         ClickBtn(logOutBtnHome);
     }
-    public void UserClickCartBtn()
-    {
-        ClickBtn(cartBtnHome);
-    }
+//    public void UserClickCartBtn()
+//    {
+//        ClickBtn(cartBtnHome);
+//    }
     public void UserClickHomeBtn()
     {
         ClickBtn(homeBtn);
