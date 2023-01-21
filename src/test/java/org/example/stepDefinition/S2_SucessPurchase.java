@@ -1,17 +1,12 @@
 package org.example.stepDefinition;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.data.Constants;
 import org.example.pages.*;
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.concurrent.TimeUnit;
 
 import static org.example.stepDefinition.Hooks.driver;
@@ -114,6 +109,7 @@ public class S2_SucessPurchase {
     @Then("Checkout done and successful msg will be displayed")
     public void checkoutDoneAndSuccessfulMsgWillBeDisplayed()
     {
+        Hooks.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         String actualResult = Hooks.driver.findElement(By.xpath("//h2[.='Thank you for your purchase!']")).getText();
         String expectedResult = "Thank you";
         Assert.assertTrue(actualResult.contains(expectedResult));

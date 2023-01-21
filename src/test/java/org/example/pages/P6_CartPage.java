@@ -11,7 +11,6 @@ public class P6_CartPage extends BasePage
     {
         super(driver);
     }
-    public static final String itemInCartID = "Nexus 6";
     public static final String deleteBtnID ="//*[@id=\"tbodyid\"]/tr[1]/td[4]/a";
     public static final String placeOrderBtnID = "//button[contains(text(), 'Place Order')]";
     public WebElement deleteBtn;

@@ -8,7 +8,6 @@ import org.example.data.Constants;
 import org.example.pages.P1_HomePage;
 import org.example.pages.P2_RegistrationPage;
 import org.example.pages.P3_LoginPage;
-import org.junit.Assert;
 import org.openqa.selenium.Alert;
 
 public class S1_RegisterAndLogInStepDef {
