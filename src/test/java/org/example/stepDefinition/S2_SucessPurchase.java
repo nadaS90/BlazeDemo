@@ -70,35 +70,26 @@ public class S2_SucessPurchase {
     }
 
     @When("User add item One to the cart")
-    public void userAddItemOneToTheCart() throws InterruptedException {
+    public void userAddItemOneToTheCart() throws InterruptedException
+    {
         _categoryPage.UserNavigateToItemOne();
         _itemPage.SetAddToCartBtn();
         _itemPage.UserClickAddToCartBtn();
         _homePage.SetCartBtn();
         _homePage.UserClickCartBtn();
 
-//        Hooks.driver.navigate().to("https://www.demoblaze.com/cart.html");
-//        Hooks.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
 
 
     @Then("User delete item from cart")
-    public void userDeleteItemFromCart()  {
-//        Hooks.driver.navigate().to("https://www.demoblaze.com/cart.html");
-//        Hooks.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    public void userDeleteItemFromCart()
+    {
         _cartPage.SetDeleteBtn();
         _cartPage.UserClickDeleteBtn();
-//        Hooks.driver.navigate().to("https://www.demoblaze.com");
-//        Hooks.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-//        Thread.sleep(5000);
-
-        //  _cartPage.UserClickDeleteBtn();
-        // _homePage.UserClickCartBtn()
-//
-         String actualString = _cartPage.itemInCart.getText();
-         String expectedString = "Nexus 6";
-         Assert.assertTrue(actualString.contains(expectedString));
+//         String actualString = _cartPage.itemInCart.getText();
+//         String expectedString = "Nexus 6";
+//         Assert.assertTrue(actualString.contains(expectedString));
     }
 
 

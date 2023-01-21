@@ -16,7 +16,7 @@ public class P6_CartPage extends BasePage
     public static final String placeOrderBtnID = "//button[contains(text(), 'Place Order')]";
     public WebElement deleteBtn;
 
-    public WebElement itemInCart = Hooks.driver.findElement(By.linkText(itemInCartID));
+    //public WebElement itemInCart = Hooks.driver.findElement(By.linkText(itemInCartID));
     public WebElement placeOrderBtn;
 
 
