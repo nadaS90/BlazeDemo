@@ -18,16 +18,16 @@ public class P1_HomePage extends BasePage
     public static final String logOutBtnHomeID = "//a[.='Log out']";
     public static final String cartBtnHomeID ="//a[.='Cart']";
     public static final String welcomeTxtHomeID ="nameofuser";
-    public static final String homeBtnID ="//div[@id='navbarExample']/ul//a[@href='index.html']";
+    public static final String homeBtnID ="//a[contains(.,'Home')]";
 
 
 
     public WebElement signUpBtnHome = Hooks.driver.findElement(By.id(signUpBtnHomeID));
     public WebElement loginBtnHome = Hooks.driver.findElement(By.id(logInBtnHomeID));
-    public WebElement cartBtnHome = Hooks.driver.findElement(By.id(cartBtnHomeID));
+    public WebElement cartBtnHome ;
     public WebElement homeBtn = Hooks.driver.findElement(By.xpath(homeBtnID));
     public WebElement logOutBtnHome = Hooks.driver.findElement(By.xpath(logOutBtnHomeID));
-    public WebElement welcomeTxtHome = Hooks.driver.findElement(By.id(welcomeTxtHomeID));
+    //public WebElement welcomeTxtHome = Hooks.driver.findElement(By.id(welcomeTxtHomeID));
 
     public void UserClickSignUpBtn()
     {
@@ -37,14 +37,23 @@ public class P1_HomePage extends BasePage
     {
         ClickBtn(loginBtnHome);
     }
-    public void UserClickLogOutBtn()
+    public void SetCartBtn()
     {
-        ClickBtn(logOutBtnHome);
+        cartBtnHome = Hooks.driver.findElement(By.xpath(cartBtnHomeID));
     }
     public void UserClickCartBtn()
     {
         ClickBtn(cartBtnHome);
     }
+
+    public void UserClickLogOutBtn()
+    {
+        ClickBtn(logOutBtnHome);
+    }
+//    public void UserClickCartBtn()
+//    {
+//        ClickBtn(cartBtnHome);
+//    }
     public void UserClickHomeBtn()
     {
         ClickBtn(homeBtn);

@@ -52,7 +52,6 @@ public class S1_RegisterAndLogInStepDef {
 
     @Then("user could register successfully and success msg appears")
     public void userCouldRegisterSuccessfullyAndSuccessMsgAppears() throws InterruptedException {
-        //WebElement.sendKeys(Keys.ENTER);
         Thread.sleep(5000);
         Alert al = Hooks.driver.switchTo().alert();
         al.accept();
@@ -65,35 +64,9 @@ public class S1_RegisterAndLogInStepDef {
     }
 
     @And("user enter valid email and password")
-    public void userEnterValidEmailAndPassword() throws InterruptedException {
+    public void userEnterValidEmailAndPassword(){
         _loginPage.UserEnterUserName(Constants.email);
         _loginPage.UserEnterPassword(Constants.Password);
         _loginPage.UserClickSignInBtn();
-//        Assert.assertTrue(_homePage.welcomeTxtHome.isDisplayed());
-//        Assert.assertEquals(_homePage.logOutBtn.getText().toLowerCase(), logOutHomeBtn, "Log out");
-
-    }
-
-    @When("user go to login page")
-    public void userGoToLoginPage() throws InterruptedException {
-        Thread.sleep(6000);
-//        _homePage.UserClickLogOutBtn();
-//        _homePage.UserClickLogInBtn();
-        _homePage.UserClickCartBtn();
-    }
-
-    @And("user enter invalid email and password")
-    public void userEnterInvalidEmailAndPassword()
-    {
-        _loginPage.UserEnterUserName(Constants.wrongEmail);
-        _loginPage.UserEnterPassword(Constants.Password);
-        _loginPage.UserClickSignInBtn();
-    }
-
-    @Then("user could not login to the system")
-    public void userCouldNotLoginToTheSystem() throws InterruptedException {
-        Thread.sleep(5000);
-        Alert al = Hooks.driver.switchTo().alert();
-        al.accept();
     }
 }
